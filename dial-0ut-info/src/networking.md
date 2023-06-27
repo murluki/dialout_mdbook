@@ -124,7 +124,7 @@ With the Raspberry Pi now functioning as a Wireless Access Point with Pi-hole ru
 Help me write the next section. Here is some more info for you:
 
 nym-gateway and nym-socks5-client are installed.  
-
+```
 ## First set the vars for gateway and sp
 ##
 ## NYM_GATEWAY="/home/nym/.nym/gateway.lst"
@@ -137,7 +137,7 @@ nym-gateway and nym-socks5-client are installed.
 ##
 ## Both things would eventually run as a service files like following example:
 ##
-```
+
 [Unit]
 Description=nym mixnode service
 After=network.target
@@ -152,11 +152,11 @@ RestartSec=30
 
 [Install]
 WantedBy=multi-user.target
-```
+
 
 ## SNIFF THE TRAFFIC in multiple terminal windows to show how this is going through -p 1080
 ## and how other stuff goes through ANY except 108”
-
+```
 Setting up Nym Mixnet Gateway:
 ## 5.1. Set Up Nym Mixnet Gateway Variables:
 
