@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="pitch.html"><strong aria-hidden="true">1.</strong> Main info</a></li><li class="chapter-item expanded "><a href="research.html"><strong aria-hidden="true">2.</strong> Research on product/competition</a></li><li class="chapter-item expanded "><a href="roadmap.html"><strong aria-hidden="true">3.</strong> Roadmap</a></li><li class="chapter-item expanded "><a href="networking.html"><strong aria-hidden="true">4.</strong> Networking</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="pitch.html"><strong aria-hidden="true">1.</strong> Main info</a></li><li class="chapter-item expanded "><a href="networking.html"><strong aria-hidden="true">2.</strong> Networking</a></li><li class="chapter-item expanded "><a href="usecases.html"><strong aria-hidden="true">3.</strong> Use cases</a></li><li class="chapter-item expanded "><a href="nymresearch.html"><strong aria-hidden="true">4.</strong> Nym Research</a></li><li class="chapter-item expanded "><a href="roadmap.html"><strong aria-hidden="true">5.</strong> Roadmap</a></li><li class="chapter-item expanded "><a href="research.html"><strong aria-hidden="true">6.</strong> Research on product/competition</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -168,91 +168,9 @@ Our modular router is designed to minimize the attack surface, reducing potentia
 <p>dial0ut is designed for both individual consumers and businesses who value their digital privacy. Our dual-market approach ensures our product caters to a wide range of users, from the privacy-conscious individual to the security-focused business.</p>
 <h2 id="our-vision"><a class="header" href="#our-vision">Our Vision</a></h2>
 <p>Our journey has just begun. We're starting with OpenWRT as our foundational OS, but we have our sights set on developing our custom OS or integrating with robust systems like balenaOS or NixOS in the future. </p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="research-on-competition"><a class="header" href="#research-on-competition">Research on competition</a></h1>
-<h1 id="what-are-some-other-projects-trying-to-build-something-similar"><a class="header" href="#what-are-some-other-projects-trying-to-build-something-similar">What are some other projects trying to build something similar?</a></h1>
-<h2 id="turris"><a class="header" href="#turris">Turris</a></h2>
-<ul>
-<li>two indiegogo campaigns with $2 mil raised there + VCs</li>
-<li>sponsored also by the CZE government (<strong>CZ.NIC)</strong> and somewhat in control of OpenWRT repo</li>
-</ul>
-<p>“<strong>Turris Omnia: hi-performance &amp; open-source router</strong></p>
-<p><strong>More than just a router. The open-source center of your home.</strong></p>
-<p><strong>CZ.NIC2 Campaigns | Prague, Czech Republic</strong></p>
-<p>**$1,223,230 USD by 8,275 backers$857,005 USD by 5,354 backers on Jan 12, 2016”</p>
-<p>video for their latest campaign:** https://youtu.be/3ATAFufg_pY
-<strong><strong><strong><strong><strong><strong><strong><strong>gitlab (fork the living hell out of it!):</strong></strong></strong></strong></strong></strong></strong></strong> https://gitlab.nic.cz/turris</p>
-<ul>
-<li>Turris Omnia starts at $410 https://www.amazon.de/stores/page/DFEE501C-F517-4960-B8B5-BA65B53D8C18?ingress=0&amp;visitId=2a870415-2611-4779-85e6-796f90348844</li>
-<li>There are lot of overlapping features with our product</li>
-<li>Design look like shit. ZTE and Huawei rule compared to this</li>
-</ul>
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/109bdcfe-76f7-42c7-ad58-f81f0ca75555/Untitled.png" alt="Untitled" /></p>
-<p><a href=""></a></p>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="month-1"><a class="header" href="#month-1">Month 1:</a></h2>
-<ol>
-<li>Research and understand the requirements and specifications of the WiFi AP, including the integration of the NYM mixnet.</li>
-<li>Develop a comprehensive design plan for the hardware and software components of the AP.</li>
-<li>Begin the development of the NYM gateway software and its integration with the router.</li>
-</ol>
-<h2 id="month-2"><a class="header" href="#month-2">Month 2:</a></h2>
-<ol>
-<li>Continue the development of the NYM gateway software and ensure its compatibility with different router models.</li>
-<li>Implement the routing of sensitive traffic through the NYM mixnet for transactions, messengers, emails, and other identified data types.</li>
-<li>Conduct thorough testing and debugging of the NYM gateway software.</li>
-</ol>
-<h2 id="month-3"><a class="header" href="#month-3">Month 3:</a></h2>
-<ol>
-<li>Focus on optimizing the performance and efficiency of the NYM gateway software.</li>
-<li>Develop a separate network segment for handling anonymized traffic, ensuring network segregation.</li>
-<li>Enhance the security features of the router and the NYM gateway to minimize potential attack surfaces.</li>
-</ol>
-<h2 id="month-4"><a class="header" href="#month-4">Month 4:</a></h2>
-<ol>
-<li>Integrate the NYM gateway software into the router's firmware, ensuring seamless operation.</li>
-<li>Conduct extensive testing and quality assurance to verify the functionality and security of the integrated solution.</li>
-<li>Start working on the implementation of the battery-saving feature, allowing the nym-client to run independently of the phone.</li>
-</ol>
-<h2 id="month-5"><a class="header" href="#month-5">Month 5:</a></h2>
-<ol>
-<li>Finalize the development of the battery-saving feature, ensuring it operates efficiently without impacting performance.</li>
-<li>Perform rigorous testing to validate the battery-saving functionality and address any potential issues.</li>
-<li>Conduct comprehensive security audits to identify and mitigate vulnerabilities.</li>
-</ol>
-<h2 id="month-6"><a class="header" href="#month-6">Month 6:</a></h2>
-<ol>
-<li>Conduct a thorough review of the entire solution, addressing any remaining bugs or performance issues.</li>
-<li>Prepare documentation and user guides for the WiFi AP, including instructions on setting up the NYM gateway and utilizing its features.</li>
-<li>Release the product v1 to a limited audience for beta testing and gather user feedback for further improvements.</li>
-</ol>
-<h1 id="nymxmas---day-of-product-release"><a class="header" href="#nymxmas---day-of-product-release">NYMXMAS - DAY OF PRODUCT RELEASE!</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="routing-traffic-via-nym"><a class="header" href="#routing-traffic-via-nym">Routing Traffic via Nym</a></h1>
-<h2 id="to-do-73-and-on-traffic-segmentation-wrapper-for-networking"><a class="header" href="#to-do-73-and-on-traffic-segmentation-wrapper-for-networking"><b>&quot;TO-DO&quot;: 7.3 and on, traffic segmentation, wrapper for networking </b></a></h2>
-<p>Assignment:</p>
-<ul>
-<li>[project] is: wireless AP that has pi-hole on it and nym-gateway to access nym mixnet over nym-socks5-client. All traffic from AP’s guests (Telegram, Signal, Monero wallet, Metamask wallet and Keplr wallet) should be routed through the nym-socks5-proxy running at localhost:1080 on the WiFi AP. Other traffic would be routed over the regular default gateway on the wifi AP. We are using Raspberry Pi OS.</li>
-</ul>
-<p>Before we dive into coding and implementing the project, let's first establish a solid plan. Here's a brief outline of our approach:</p>
-<h2 id="table-of-contents"><a class="header" href="#table-of-contents">Table of Contents:</a></h2>
-<p>Hardware and Software Requirements
-System Setup
-Configuring Raspberry Pi as a Wireless Access Point
-Installing and Configuring Pi-hole
-Setting up Nym Mixnet Gateway
-Configuring Traffic Routing
-Testing and Verification
-Future Enhancements and Roadmap
-Task:</p>
-<p>Hardware and Software Requirements: Identify all the necessary hardware components, as well as the Raspberry Pi OS and other software we'll need.
-System Setup: Prepare the Raspberry Pi hardware, install the OS, and set up the development environment.
-Configuring Raspberry Pi as a Wireless Access Point: Use hostapd to convert the Raspberry Pi into a WiFi access point.
-Installing and Configuring Pi-hole: Install Pi-hole on the Raspberry Pi to act as a network-wide ad blocker.
-Setting up Nym Mixnet Gateway: Install and configure the Nym gateway to allow our access point to route specific traffic through the Nym mixnet.
-Configuring Traffic Routing: Setup iptables rules to route specific traffic (Telegram, Signal, Monero wallet, Metamask wallet, Keplr wallet) through the Nym-socks5-proxy and other traffic through the default gateway.
-Testing and Verification: Check that the setup works as expected, all the traffic is routed properly, and the Pi-hole and Nym gateway function correctly.
-Future Enhancements and Roadmap: Discuss potential improvements to the project and outline the roadmap for future development.
-Next, we will begin with the Hardware and Software Requirements.
-we are using 64-bit raspberry pi OS on raspberry pi 4, that means the arch is aarch64-unknown-linux-gnu. We will run the pi headless and without GUI.
-Write step 2. and include the new information in the documentation.</p>
+<p><img src="../img/1.jpg" alt="Alternative text" /></p>
+<p>Our product is a wireless AP that has pi-hole on it and nym-gateway to access nym mixnet over nym-socks5-client. All traffic from AP’s guests (Telegram, Signal, Monero wallet, Metamask wallet and Keplr wallet) should be routed through the nym-socks5-proxy running at localhost:1080 on the WiFi AP. Other traffic would be routed over the regular default gateway on the wifi AP. We are using Raspberry Pi OS.</p>
 <h2 id="system-setup"><a class="header" href="#system-setup">System Setup:</a></h2>
 <p>Given our Raspberry Pi 4 with the 64-bit Raspberry Pi OS (arch: aarch64-unknown-linux-gnu), our system setup will proceed as follows:</p>
 <h2 id="21-initial-setup"><a class="header" href="#21-initial-setup">2.1. Initial Setup:</a></h2>
@@ -491,6 +409,81 @@ Stop the packet capture and filter the results to show only outbound communicati
 By inspecting the destination IP addresses in the packet capture, you should be able to compile a list of IPs for each application. This list can then be used in the iptables rules.</p>
 <p>Please note that this method might not give a comprehensive list of all IPs used by these apps, but it should give a reasonable subset for a proof-of-concept project.</p>
 <p>Once you've obtained the IP ranges for each of these apps, the next step would be to modify the iptables rules in the redsocks setup script to include these IPs. Afterward, test the setup to ensure the apps' traffic is being correctly routed through the Nym socks5 proxy.</p>
+<h2 id="to-do-73-and-on-traffic-segmentation-wrapper-for-networking"><a class="header" href="#to-do-73-and-on-traffic-segmentation-wrapper-for-networking"><b>&quot;TO-DO&quot;: 7.3 and on, traffic segmentation, wrapper for networking </b></a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="exploring-efficient-user-solutions-for-nym-a-case-for-thunderbird-and-future-developments"><a class="header" href="#exploring-efficient-user-solutions-for-nym-a-case-for-thunderbird-and-future-developments">Exploring Efficient User Solutions for NYM: A Case for Thunderbird and Future Developments</a></h1>
+<p>Through extensive exploration and analysis of user behavior, it has been identified that Thunderbird emerges as the optimal and most efficient email client for NYM users. This robust platform is both user-friendly and meshes seamlessly with the current NYM user base.</p>
+<p>In contrast, the ProtonMail Bridge, which was initially considered, appears to involve complex cryptographic operations and API. Additionally, its foundation in Qt makes it less desirable due to its intensive requirements. Furthermore, ProtonMail Bridge does not seem to offer substantial benefits to justify its complexity.</p>
+<p>Research data indicates a significant proportion of users connecting to web applications like Gmail, further bolstering the case for Thunderbird. Considering its user-friendly interface, Thunderbird emerges as an excellent choice for both the existing user base and potential users in the years to come.</p>
+<p>However, current capabilities for file transfers have limitations. The file transfer process tends to falter when transferring files below 100 KB, suggesting the current usage scenario remains quite limited.</p>
+<p>A comparison between service providers and clients revealed interesting insights. While mixnodes can theoretically run on minimal hardware like the Raspberry Pi Zero W, a SOCKS5 client operating on a Raspberry Pi 4 with 8GB of RAM is noticeably slower than on a MacBook Air M1.</p>
+<p>In future phases of development, the creation of a web application email provider could be explored. Detailed traffic flow analysis has provided a clear understanding of the system operations, paving the way for future advancements.</p>
+<p>Moreover, the successful development of a multi-user chat using netcat adds another dimension to the achievements. This capability extends to sending messages from a simplistic web application employing WebSockets to TCP back to the netcat chat, underlining the feasibility of multi-user chat applications.</p>
+<p>The application can be launched from a Dockerfile on any server, supporting both TCP streams and WebSockets, providing seamless functionality across web and CLI applications. Despite arguments that this approach could potentially undermine the purpose of the mixnet, the application ensures anonymity for users by obfuscating user identities and conversations, making it ideal for certain scenarios.</p>
+<p>Another noteworthy experiment was the exploration of a solution akin to Magic-Wormhole. This involved tunneling over mixnet over SOCKS5 and testing how file transfers operate over another relay. This functionality could be easily enabled by setting up a relay host.</p>
+<p>In terms of demonstration and user guidance, the proposal includes creating a user-friendly guide, potentially in the form of a Gist, that would help users navigate the email traffic from Thunderbird to major email providers.</p>
+<p>Lastly, the revitalization of the nym-router is a significant project on the horizon. The model has been redesigned in the style of Pi-Hole, complete with custom design and branding. Depending on demand, over 100 units could be ready by Christmas. The advent of zk-nyms could transform it into more than just a personal gateway and client for the mixnet. Coupled with the integration of a Yubikey, this could herald a new era of secure, efficient communication.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="nym-research"><a class="header" href="#nym-research">Nym Research</a></h1>
+<ol>
+<li>how does mixnode translate gateway tcp traffic to sphinx packets? </li>
+<li>how does mixnode send packets to another mixnode ?</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="month-1"><a class="header" href="#month-1">Month 1:</a></h2>
+<ol>
+<li>Research and understand the requirements and specifications of the WiFi AP, including the integration of the NYM mixnet.</li>
+<li>Develop a comprehensive design plan for the hardware and software components of the AP.</li>
+<li>Begin the development of the NYM gateway software and its integration with the router.</li>
+</ol>
+<h2 id="month-2"><a class="header" href="#month-2">Month 2:</a></h2>
+<ol>
+<li>Continue the development of the NYM gateway software and ensure its compatibility with different router models.</li>
+<li>Implement the routing of sensitive traffic through the NYM mixnet for transactions, messengers, emails, and other identified data types.</li>
+<li>Conduct thorough testing and debugging of the NYM gateway software.</li>
+</ol>
+<h2 id="month-3"><a class="header" href="#month-3">Month 3:</a></h2>
+<ol>
+<li>Focus on optimizing the performance and efficiency of the NYM gateway software.</li>
+<li>Develop a separate network segment for handling anonymized traffic, ensuring network segregation.</li>
+<li>Enhance the security features of the router and the NYM gateway to minimize potential attack surfaces.</li>
+</ol>
+<h2 id="month-4"><a class="header" href="#month-4">Month 4:</a></h2>
+<ol>
+<li>Integrate the NYM gateway software into the router's firmware, ensuring seamless operation.</li>
+<li>Conduct extensive testing and quality assurance to verify the functionality and security of the integrated solution.</li>
+<li>Start working on the implementation of the battery-saving feature, allowing the nym-client to run independently of the phone.</li>
+</ol>
+<h2 id="month-5"><a class="header" href="#month-5">Month 5:</a></h2>
+<ol>
+<li>Finalize the development of the battery-saving feature, ensuring it operates efficiently without impacting performance.</li>
+<li>Perform rigorous testing to validate the battery-saving functionality and address any potential issues.</li>
+<li>Conduct comprehensive security audits to identify and mitigate vulnerabilities.</li>
+</ol>
+<h2 id="month-6"><a class="header" href="#month-6">Month 6:</a></h2>
+<ol>
+<li>Conduct a thorough review of the entire solution, addressing any remaining bugs or performance issues.</li>
+<li>Prepare documentation and user guides for the WiFi AP, including instructions on setting up the NYM gateway and utilizing its features.</li>
+<li>Release the product v1 to a limited audience for beta testing and gather user feedback for further improvements.</li>
+</ol>
+<h1 id="nymxmas---day-of-product-release"><a class="header" href="#nymxmas---day-of-product-release">NYMXMAS - DAY OF PRODUCT RELEASE!</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="research-on-competition"><a class="header" href="#research-on-competition">Research on competition</a></h1>
+<h1 id="what-are-some-other-projects-trying-to-build-something-similar"><a class="header" href="#what-are-some-other-projects-trying-to-build-something-similar">What are some other projects trying to build something similar?</a></h1>
+<h2 id="turris"><a class="header" href="#turris">Turris</a></h2>
+<ul>
+<li>two indiegogo campaigns with $2 mil raised there + VCs</li>
+<li>sponsored also by the CZE government (<strong>CZ.NIC)</strong> and somewhat in control of OpenWRT repo</li>
+</ul>
+<p>“<strong>Turris Omnia: hi-performance &amp; open-source router</strong></p>
+<p><strong>More than just a router. The open-source center of your home.</strong></p>
+<p><strong>CZ.NIC2 Campaigns | Prague, Czech Republic</strong></p>
+<p>**$1,223,230 USD by 8,275 backers$857,005 USD by 5,354 backers on Jan 12, 2016”</p>
+<p>video for their latest campaign:** https://youtu.be/3ATAFufg_pY
+<strong><strong><strong><strong><strong><strong><strong><strong>gitlab (fork the living hell out of it!):</strong></strong></strong></strong></strong></strong></strong></strong> https://gitlab.nic.cz/turris</p>
+<ul>
+<li>Turris Omnia starts at $410 https://www.amazon.de/stores/page/DFEE501C-F517-4960-B8B5-BA65B53D8C18?ingress=0&amp;visitId=2a870415-2611-4779-85e6-796f90348844</li>
+<li>There are lot of overlapping features with our product</li>
+<li>Design look like shit. ZTE and Huawei rule compared to this</li>
+</ul>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/109bdcfe-76f7-42c7-ad58-f81f0ca75555/Untitled.png" alt="Untitled" /></p>
+<p><a href=""></a></p>
 
                     </main>
 

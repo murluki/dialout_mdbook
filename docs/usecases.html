@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Roadmap - DIAL 0UT</title>
+        <title>Use cases - DIAL 0UT</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="pitch.html"><strong aria-hidden="true">1.</strong> Main info</a></li><li class="chapter-item expanded "><a href="networking.html"><strong aria-hidden="true">2.</strong> Networking</a></li><li class="chapter-item expanded "><a href="usecases.html"><strong aria-hidden="true">3.</strong> Use cases</a></li><li class="chapter-item expanded "><a href="nymresearch.html"><strong aria-hidden="true">4.</strong> Nym Research</a></li><li class="chapter-item expanded "><a href="roadmap.html" class="active"><strong aria-hidden="true">5.</strong> Roadmap</a></li><li class="chapter-item expanded "><a href="research.html"><strong aria-hidden="true">6.</strong> Research on product/competition</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="pitch.html"><strong aria-hidden="true">1.</strong> Main info</a></li><li class="chapter-item expanded "><a href="networking.html"><strong aria-hidden="true">2.</strong> Networking</a></li><li class="chapter-item expanded "><a href="usecases.html" class="active"><strong aria-hidden="true">3.</strong> Use cases</a></li><li class="chapter-item expanded "><a href="nymresearch.html"><strong aria-hidden="true">4.</strong> Nym Research</a></li><li class="chapter-item expanded "><a href="roadmap.html"><strong aria-hidden="true">5.</strong> Roadmap</a></li><li class="chapter-item expanded "><a href="research.html"><strong aria-hidden="true">6.</strong> Research on product/competition</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -144,53 +144,28 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="month-1"><a class="header" href="#month-1">Month 1:</a></h2>
-<ol>
-<li>Research and understand the requirements and specifications of the WiFi AP, including the integration of the NYM mixnet.</li>
-<li>Develop a comprehensive design plan for the hardware and software components of the AP.</li>
-<li>Begin the development of the NYM gateway software and its integration with the router.</li>
-</ol>
-<h2 id="month-2"><a class="header" href="#month-2">Month 2:</a></h2>
-<ol>
-<li>Continue the development of the NYM gateway software and ensure its compatibility with different router models.</li>
-<li>Implement the routing of sensitive traffic through the NYM mixnet for transactions, messengers, emails, and other identified data types.</li>
-<li>Conduct thorough testing and debugging of the NYM gateway software.</li>
-</ol>
-<h2 id="month-3"><a class="header" href="#month-3">Month 3:</a></h2>
-<ol>
-<li>Focus on optimizing the performance and efficiency of the NYM gateway software.</li>
-<li>Develop a separate network segment for handling anonymized traffic, ensuring network segregation.</li>
-<li>Enhance the security features of the router and the NYM gateway to minimize potential attack surfaces.</li>
-</ol>
-<h2 id="month-4"><a class="header" href="#month-4">Month 4:</a></h2>
-<ol>
-<li>Integrate the NYM gateway software into the router's firmware, ensuring seamless operation.</li>
-<li>Conduct extensive testing and quality assurance to verify the functionality and security of the integrated solution.</li>
-<li>Start working on the implementation of the battery-saving feature, allowing the nym-client to run independently of the phone.</li>
-</ol>
-<h2 id="month-5"><a class="header" href="#month-5">Month 5:</a></h2>
-<ol>
-<li>Finalize the development of the battery-saving feature, ensuring it operates efficiently without impacting performance.</li>
-<li>Perform rigorous testing to validate the battery-saving functionality and address any potential issues.</li>
-<li>Conduct comprehensive security audits to identify and mitigate vulnerabilities.</li>
-</ol>
-<h2 id="month-6"><a class="header" href="#month-6">Month 6:</a></h2>
-<ol>
-<li>Conduct a thorough review of the entire solution, addressing any remaining bugs or performance issues.</li>
-<li>Prepare documentation and user guides for the WiFi AP, including instructions on setting up the NYM gateway and utilizing its features.</li>
-<li>Release the product v1 to a limited audience for beta testing and gather user feedback for further improvements.</li>
-</ol>
-<h1 id="nymxmas---day-of-product-release"><a class="header" href="#nymxmas---day-of-product-release">NYMXMAS - DAY OF PRODUCT RELEASE!</a></h1>
+                        <h1 id="exploring-efficient-user-solutions-for-nym-a-case-for-thunderbird-and-future-developments"><a class="header" href="#exploring-efficient-user-solutions-for-nym-a-case-for-thunderbird-and-future-developments">Exploring Efficient User Solutions for NYM: A Case for Thunderbird and Future Developments</a></h1>
+<p>Through extensive exploration and analysis of user behavior, it has been identified that Thunderbird emerges as the optimal and most efficient email client for NYM users. This robust platform is both user-friendly and meshes seamlessly with the current NYM user base.</p>
+<p>In contrast, the ProtonMail Bridge, which was initially considered, appears to involve complex cryptographic operations and API. Additionally, its foundation in Qt makes it less desirable due to its intensive requirements. Furthermore, ProtonMail Bridge does not seem to offer substantial benefits to justify its complexity.</p>
+<p>Research data indicates a significant proportion of users connecting to web applications like Gmail, further bolstering the case for Thunderbird. Considering its user-friendly interface, Thunderbird emerges as an excellent choice for both the existing user base and potential users in the years to come.</p>
+<p>However, current capabilities for file transfers have limitations. The file transfer process tends to falter when transferring files below 100 KB, suggesting the current usage scenario remains quite limited.</p>
+<p>A comparison between service providers and clients revealed interesting insights. While mixnodes can theoretically run on minimal hardware like the Raspberry Pi Zero W, a SOCKS5 client operating on a Raspberry Pi 4 with 8GB of RAM is noticeably slower than on a MacBook Air M1.</p>
+<p>In future phases of development, the creation of a web application email provider could be explored. Detailed traffic flow analysis has provided a clear understanding of the system operations, paving the way for future advancements.</p>
+<p>Moreover, the successful development of a multi-user chat using netcat adds another dimension to the achievements. This capability extends to sending messages from a simplistic web application employing WebSockets to TCP back to the netcat chat, underlining the feasibility of multi-user chat applications.</p>
+<p>The application can be launched from a Dockerfile on any server, supporting both TCP streams and WebSockets, providing seamless functionality across web and CLI applications. Despite arguments that this approach could potentially undermine the purpose of the mixnet, the application ensures anonymity for users by obfuscating user identities and conversations, making it ideal for certain scenarios.</p>
+<p>Another noteworthy experiment was the exploration of a solution akin to Magic-Wormhole. This involved tunneling over mixnet over SOCKS5 and testing how file transfers operate over another relay. This functionality could be easily enabled by setting up a relay host.</p>
+<p>In terms of demonstration and user guidance, the proposal includes creating a user-friendly guide, potentially in the form of a Gist, that would help users navigate the email traffic from Thunderbird to major email providers.</p>
+<p>Lastly, the revitalization of the nym-router is a significant project on the horizon. The model has been redesigned in the style of Pi-Hole, complete with custom design and branding. Depending on demand, over 100 units could be ready by Christmas. The advent of zk-nyms could transform it into more than just a personal gateway and client for the mixnet. Coupled with the integration of a Yubikey, this could herald a new era of secure, efficient communication.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="nymresearch.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="networking.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="research.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="nymresearch.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -200,33 +175,17 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="nymresearch.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="networking.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="research.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="nymresearch.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
