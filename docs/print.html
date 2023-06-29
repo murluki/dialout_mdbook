@@ -169,7 +169,6 @@ Our modular router is designed to minimize the attack surface, reducing potentia
 <h2 id="our-vision"><a class="header" href="#our-vision">Our Vision</a></h2>
 <p>Our journey has just begun. We're starting with OpenWRT as our foundational OS, but we have our sights set on developing our custom OS or integrating with robust systems like balenaOS or NixOS in the future. </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="routing-traffic-via-nym"><a class="header" href="#routing-traffic-via-nym">Routing Traffic via Nym</a></h1>
-<p><img src="../img/1.jpg" alt="Alternative text" /></p>
 <p>Our product is a wireless AP that has pi-hole on it and nym-gateway to access nym mixnet over nym-socks5-client. All traffic from AP’s guests (Telegram, Signal, Monero wallet, Metamask wallet and Keplr wallet) should be routed through the nym-socks5-proxy running at localhost:1080 on the WiFi AP. Other traffic would be routed over the regular default gateway on the wifi AP. We are using Raspberry Pi OS.</p>
 <h2 id="system-setup"><a class="header" href="#system-setup">System Setup:</a></h2>
 <p>Given our Raspberry Pi 4 with the 64-bit Raspberry Pi OS (arch: aarch64-unknown-linux-gnu), our system setup will proceed as follows:</p>
@@ -427,7 +426,6 @@ By inspecting the destination IP addresses in the packet capture, you should be 
 <li>how does mixnode translate gateway tcp traffic to sphinx packets? </li>
 <li>how does mixnode send packets to another mixnode ?</li>
 </ol>
-<p><img src="../img/2.jpg" alt="Alternative text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="month-1"><a class="header" href="#month-1">Month 1:</a></h2>
 <ol>
 <li>Research and understand the requirements and specifications of the WiFi AP, including the integration of the NYM mixnet.</li>
@@ -483,8 +481,6 @@ By inspecting the destination IP addresses in the packet capture, you should be 
 <li>There are lot of overlapping features with our product</li>
 <li>Design look like shit. ZTE and Huawei rule compared to this</li>
 </ul>
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/109bdcfe-76f7-42c7-ad58-f81f0ca75555/Untitled.png" alt="Untitled" /></p>
-<p><a href=""></a></p>
 
                     </main>
 
