@@ -1,0 +1,456 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Networking - DIAL 0UT</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="pitch.html"><strong aria-hidden="true">1.</strong> Main info</a></li><li class="chapter-item expanded "><a href="networking.html" class="active"><strong aria-hidden="true">2.</strong> Networking</a></li><li class="chapter-item expanded "><a href="usecases.html"><strong aria-hidden="true">3.</strong> Use cases</a></li><li class="chapter-item expanded "><a href="nymresearch.html"><strong aria-hidden="true">4.</strong> Nym Research</a></li><li class="chapter-item expanded "><a href="roadmap.html"><strong aria-hidden="true">5.</strong> Roadmap</a></li><li class="chapter-item expanded "><a href="research.html"><strong aria-hidden="true">6.</strong> Research on product/competition</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">DIAL 0UT</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="routing-traffic-via-nym"><a class="header" href="#routing-traffic-via-nym">Routing Traffic via Nym</a></h1>
+<p><img src="../img/1.jpg" alt="Alternative text" /></p>
+<p>Our product is a wireless AP that has pi-hole on it and nym-gateway to access nym mixnet over nym-socks5-client. All traffic from AP’s guests (Telegram, Signal, Monero wallet, Metamask wallet and Keplr wallet) should be routed through the nym-socks5-proxy running at localhost:1080 on the WiFi AP. Other traffic would be routed over the regular default gateway on the wifi AP. We are using Raspberry Pi OS.</p>
+<h2 id="system-setup"><a class="header" href="#system-setup">System Setup:</a></h2>
+<p>Given our Raspberry Pi 4 with the 64-bit Raspberry Pi OS (arch: aarch64-unknown-linux-gnu), our system setup will proceed as follows:</p>
+<h2 id="21-initial-setup"><a class="header" href="#21-initial-setup">2.1. Initial Setup:</a></h2>
+<p>Download and flash the Raspberry Pi OS onto a microSD card using software like balenaEtcher.
+Since we're running the Pi headless and without GUI, we'll create a file named 'ssh' in the boot partition of the SD card to enable SSH access.
+Insert the microSD card into the Raspberry Pi, connect it to the network, and power it up.</p>
+<h2 id="22-secure-shell-ssh-access"><a class="header" href="#22-secure-shell-ssh-access">2.2. Secure Shell (SSH) Access:</a></h2>
+<p>Find the Raspberry Pi's IP address on your network.
+Use an SSH client like PuTTY (for Windows) or the terminal (for Linux/Mac) to access the Raspberry Pi. The default credentials are:
+username: pi
+password: raspberry</p>
+<h2 id="23-system-update"><a class="header" href="#23-system-update">2.3. System Update:</a></h2>
+<p>Once logged in, it's a good practice to update the system. Run the following commands:
+bash
+Copy code
+sudo apt-get update
+sudo apt-get upgrade</p>
+<h2 id="24-configuring-network-settings"><a class="header" href="#24-configuring-network-settings">2.4. Configuring Network Settings:</a></h2>
+<p>Configure the network settings to match your local network environment.</p>
+<h2 id="25-disable-gui-optional"><a class="header" href="#25-disable-gui-optional">2.5. Disable GUI (Optional):</a></h2>
+<p>Since we want to run headless and without GUI, use the command sudo raspi-config to navigate to 'System Options' &gt; 'Boot / Auto Login' &gt; 'Console Autologin' or 'Console'.
+With these steps, our Raspberry Pi 4 should be ready for the next stages of our project.</p>
+<p>After setting up the system, the next step is to configure the Raspberry Pi as a wireless access point. We will be using hostapd for this purpose, along with dnsmasq to handle DHCP and DNS services for devices connecting to the access point.
+write 3. and 4.</p>
+<p>Configuring Raspberry Pi as a Wireless Access Point:</p>
+<h2 id="31-install-necessary-packages"><a class="header" href="#31-install-necessary-packages">3.1. Install Necessary Packages:</a></h2>
+<p>Begin by installing hostapd and dnsmasq, which will act as our access point and DHCP/DNS server respectively.
+bash
+Copy code
+sudo apt-get install hostapd dnsmasq</p>
+<h2 id="32-configure-hostapd"><a class="header" href="#32-configure-hostapd">3.2. Configure hostapd:</a></h2>
+<p>Edit the hostapd configuration file:
+bash
+Copy code
+sudo nano /etc/hostapd/hostapd.conf
+Add the following (substitute your preferred network name and password):
+bash
+Copy code
+interface=wlan0
+driver=nl80211
+ssid=Your_Network_Name
+hw_mode=g
+channel=7
+wmm_enabled=0
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_passphrase=Your_Password
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP</p>
+<h2 id="33-enable-and-start-hostapd-and-dnsmasq"><a class="header" href="#33-enable-and-start-hostapd-and-dnsmasq">3.3. Enable and Start hostapd and dnsmasq:</a></h2>
+<p>Now, let's enable and start both services:
+bash
+Copy code
+sudo systemctl unmask hostapd
+sudo systemctl enable hostapd
+sudo systemctl start hostapd
+sudo systemctl enable dnsmasq
+sudo systemctl start dnsmasq
+Installing and Configuring Pi-hole:</p>
+<h2 id="41-install-pi-hole"><a class="header" href="#41-install-pi-hole">4.1. Install Pi-hole:</a></h2>
+<p>To install Pi-hole, we'll use the automated script provided by the Pi-hole project:
+bash
+Copy code
+curl -sSL https://install.pi-hole.net | bash
+Follow the on-screen instructions to complete the setup.
+4.2. Configure Pi-hole:</p>
+<p>After the installation, access the Pi-hole admin interface via a web browser by entering the Raspberry Pi's IP address followed by '/admin'.
+Configure the settings as per your requirements. Ensure that the Pi-hole is set to listen on the 'wlan0' interface (or whichever interface you're using for your access point).</p>
+<p>With the Raspberry Pi now functioning as a Wireless Access Point with Pi-hole running on it, our next step is to set up the Nym Mixnet Gateway and configure the traffic routing.
+Help me write the next section. Here is some more info for you:</p>
+<p>nym-gateway and nym-socks5-client are installed.</p>
+<pre><code>## First set the vars for gateway and sp
+##
+## NYM_GATEWAY=&quot;/home/nym/.nym/gateway.lst&quot;
+## NYM_PROVIDER=&quot;/home/nym/.nym/sp.lst&quot;
+## FIREWALL MUST ALLOW 
+## PORTS 1789,1790,8000,9000,22 on TCP for this to work!
+## Then run the socks5 after init
+#./nym-socks5-client run --gateway $NYM_GATEWAY --provider $NYM_PROVIDER 
+## 
+##
+## Both things would eventually run as a service files like following example:
+##
+
+[Unit]
+Description=nym mixnode service
+After=network.target
+
+[Service]
+Type=simple
+User=nym
+LimitNOFILE=65536
+ExecStart=/home/nym/nym-gateway run --id dialout
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+
+
+## SNIFF THE TRAFFIC in multiple terminal windows to show how this is going through -p 1080
+## and how other stuff goes through ANY except 108”
+</code></pre>
+<p>Setting up Nym Mixnet Gateway:</p>
+<h2 id="51-set-up-nym-mixnet-gateway-variables"><a class="header" href="#51-set-up-nym-mixnet-gateway-variables">5.1. Set Up Nym Mixnet Gateway Variables:</a></h2>
+<p>We need to set the variables for the gateway and service provider. These can be added to your bash profile or set in your current shell:
+bash
+Copy code
+export NYM_GATEWAY=&quot;/home/nym/.nym/gateway.lst&quot;
+export NYM_PROVIDER=&quot;/home/nym/.nym/sp.lst&quot;</p>
+<h2 id="52-ensure-firewall-rules"><a class="header" href="#52-ensure-firewall-rules">5.2. Ensure Firewall Rules:</a></h2>
+<p>Your firewall must allow traffic on ports 1789, 1790, 8000, 9000, and 22 for TCP. Adjust your firewall settings accordingly.</p>
+<h2 id="53-run-the-nym-socks5-client"><a class="header" href="#53-run-the-nym-socks5-client">5.3. Run the Nym Socks5 Client:</a></h2>
+<p>After initializing, run the socks5 client:
+bash
+Copy code
+./nym-socks5-client run --gateway $NYM_GATEWAY --provider $NYM_PROVIDER</p>
+<h2 id="54-configure-nym-services-to-run-persistently"><a class="header" href="#54-configure-nym-services-to-run-persistently">5.4. Configure Nym Services to Run Persistently:</a></h2>
+<p>For both the nym-gateway and nym-socks5-client, we should set them up to run as services using systemd. An example service file is given above for the nym-gateway. Create similar service files for the nym-socks5-client.
+Configuring Traffic Routing:</p>
+<h2 id="61-sniffing-traffic"><a class="header" href="#61-sniffing-traffic">6.1. Sniffing Traffic:</a></h2>
+<p>To verify that traffic is being routed correctly, you can sniff the traffic in multiple terminal windows. Tools like tcpdump or Wireshark can help monitor traffic.
+Remember, in our setup, traffic from specific applications (Telegram, Signal, Monero wallet, Metamask wallet, Keplr wallet) should be routed through the nym-socks5-proxy running at localhost:1080. Other traffic should be routed through the regular default gateway.</p>
+<p>Once we have the Nym services running and the traffic routing verified, our next step is to conduct a full system test to ensure that everything works as expected. Additionally, we will be looking at future enhancements and establishing a roadmap for our project.
+Write next task</p>
+<p>Testing and Verification:</p>
+<h2 id="71-test-connectivity"><a class="header" href="#71-test-connectivity">7.1. Test Connectivity:</a></h2>
+<p>Test the connection to your WiFi access point and verify that you're able to connect and access the internet.</p>
+<h2 id="72-verify-pi-hole-functionality"><a class="header" href="#72-verify-pi-hole-functionality">7.2. Verify Pi-hole Functionality:</a></h2>
+<p>To ensure Pi-hole is working, try accessing a known ad-serving website from a device connected to the access point. You should notice that ads are being blocked.</p>
+<h2 id="73-test-nym-functionality"><a class="header" href="#73-test-nym-functionality">7.3. Test Nym Functionality:</a></h2>
+<p>Verify that the specific applications (Telegram, Signal, Monero wallet, Metamask wallet, Keplr wallet) are successfully communicating through the Nym network. This can be done by using network monitoring tools and observing that this traffic is going through the nym-socks5-proxy at localhost:1080.</p>
+<h2 id="74-test-default-traffic-routing"><a class="header" href="#74-test-default-traffic-routing">7.4. Test Default Traffic Routing:</a></h2>
+<p>Test other internet activities and confirm they're routed through the default gateway on the WiFi AP, not through the Nym network.
+Future Enhancements and Roadmap:</p>
+<h2 id="81-security-enhancements"><a class="header" href="#81-security-enhancements">8.1. Security Enhancements:</a></h2>
+<p>Review security measures and make improvements where necessary. Consider implementing a VPN or additional firewall rules for enhanced security.</p>
+<h2 id="82-improve-nym-integration"><a class="header" href="#82-improve-nym-integration">8.2. Improve Nym Integration:</a></h2>
+<p>Explore ways to better integrate Nym into our setup, perhaps by automating certain aspects of the setup process.</p>
+<h2 id="83-user-interface-improvements"><a class="header" href="#83-user-interface-improvements">8.3. User Interface Improvements:</a></h2>
+<p>Given that our system is headless, consider developing a web-based interface to allow easier control and configuration of the system.</p>
+<h2 id="84-performance-tuning"><a class="header" href="#84-performance-tuning">8.4. Performance Tuning:</a></h2>
+<p>As the system usage increases, performance tuning might be necessary. Monitor the system and identify areas that could benefit from performance optimization.
+Once the testing and verification phase is complete, and we've laid out our future roadmap, we can consider our initial setup complete. Our final step would be ongoing system monitoring and implementing the enhancements outlined in the roadmap.
+point 7.3 - please provide a script that could do that routing</p>
+<p>To achieve the desired traffic routing, we need to use iptables to create rules that direct certain traffic to go through the Nym socks5 proxy. Here's a general outline of a script that could accomplish this:</p>
+<p>bash
+Copy code
+#!/bin/bash</p>
+<p>Define applications that should use the nym-socks5-proxy
+apps=(&quot;telegram&quot; &quot;signal&quot; &quot;monero&quot; &quot;metamask&quot; &quot;keplr&quot;)</p>
+<p>Set local variables
+proxy_address=&quot;127.0.0.1&quot;
+proxy_port=&quot;1080&quot;</p>
+<p>Flush all existing iptables rules
+iptables -F
+iptables -t nat -F</p>
+<p>Loop over each app
+for app in &quot;${apps[@]}&quot;
+do
+Get the UID of the application
+app_uid=$(id -u $app)</p>
+<p>Add rule for this app's traffic to go through nym-socks5-proxy
+iptables -t nat -A OUTPUT -p tcp -m owner --uid-owner $app_uid -j DNAT --to-destination $proxy_address:$proxy_port</p>
+<p>Add rule for other traffic to go through the default gateway
+iptables -t nat -A OUTPUT -p tcp -m owner ! --uid-owner $app_uid -j ACCEPT
+done</p>
+<p>Ensure the changes persist across reboots
+iptables-save &gt; /etc/iptables/rules.v4
+Please note, this script assumes that the applications are running under their respective user names and that these user names match the strings in the 'apps' array. If this is not the case, you'll need to adjust the 'apps' array to contain the correct user names.</p>
+<p>Also, this script requires the 'iptables-persistent' package to be installed in order to save the iptables rules across reboots. You can install it by running sudo apt-get install iptables-persistent.</p>
+<p>With this script, we've established the traffic routing needed for our setup. The next step is to test this routing by following the steps outlined in 7.1 to 7.4 of our plan. Additionally, we should begin to think about the future enhancements and roadmap for our project.
+the apps are running on guests system not on the Wifi AP! It should do the similar as Pi-hole does with ADs but instead it routes it through socks5 proxy running port 1080.</p>
+<p>I see, I misunderstood the setup; I apologize for the confusion. The iptables method I described would work for apps running on the same machine where the iptables rules are being applied. For the scenario where the apps are running on devices connected to the Raspberry Pi access point, we need to use a different approach.</p>
+<p>We will need to install and configure a transparent proxy (like redsocks) on the Raspberry Pi to reroute specific traffic to the Nym socks5 proxy. Here's how we can do this:</p>
+<p>Install redsocks:
+bash
+Copy code
+sudo apt-get install redsocks
+Configure redsocks:
+Edit the redsocks configuration file (/etc/redsocks.conf), for example:</p>
+<p>bash
+Copy code
+base {
+log_debug = off;
+log_info = on;
+daemon = on;
+redirector = iptables;
+}</p>
+<p>redsocks {
+local_ip = 0.0.0.0;
+local_port = 12345;
+ip = 127.0.0.1;
+port = 1080;
+type = socks5;
+}</p>
+<p>This configuration file tells redsocks to listen on port 12345 and to redirect traffic to the Nym socks5 proxy running on localhost port 1080.</p>
+<p>Configure iptables:
+Next, we need to configure iptables to redirect traffic from your specified apps to the redsocks port. This will likely involve matching on destination port or IP addresses if the apps use specific ones. Here's an example:</p>
+<p>bash
+Copy code
+Flush all existing rules
+sudo iptables -F
+sudo iptables -t nat -F</p>
+<p>Define the IP ranges or ports for the apps
+app_destinations=(&quot;IP_or_port1&quot; &quot;IP_or_port2&quot; &quot;IP_or_port3&quot; ...)</p>
+<p>Loop over each app IP/port
+for dest in &quot;${app_destinations[@]}&quot;
+do
+# Add rule for this app's traffic to go through redsocks (and thus the Nym socks5 proxy)
+sudo iptables -t nat -A PREROUTING -p tcp -d $dest -j REDIRECT --to-ports 12345
+done</p>
+<p>Ensure the changes persist across reboots
+sudo sh -c &quot;iptables-save &gt; /etc/iptables/rules.v4&quot;
+Please replace &quot;IP_or_port1&quot;, &quot;IP_or_port2&quot;, etc. with the actual IPs or ports used by your apps.</p>
+<p>Restart redsocks service:
+bash
+Copy code
+sudo systemctl restart redsocks</p>
+<p>With this setup, traffic from the specified apps should be routed through the Nym socks5 proxy when they are connected to the WiFi access point. The next step is to test this routing to ensure it's working correctly. This involves monitoring the network traffic (as discussed in section 7 of our plan) and verifying that the specified app traffic is indeed going through the proxy.
+how to get ranges of IPv4s and IPv6s of hosts for Telegram, Monero wallet, Keplr wallet and Metamask?</p>
+<p>There isn't a straightforward way to get the full list of IP addresses used by these applications, mainly due to two reasons:</p>
+<p>The list of servers they use can change over time.
+These applications could use cloud services for their backend, which means they could technically be served from any IP within the large ranges owned by the cloud provider.
+However, one practical approach would be to observe the network traffic generated by these applications and record the IP addresses they communicate with. You can use a tool like Wireshark for this:</p>
+<p>Install Wireshark on a device running the applications.
+bash
+Copy code
+sudo apt-get install wireshark
+Run Wireshark and start a packet capture.
+Open each of the applications (Telegram, Monero wallet, Keplr wallet, and Metamask) and allow them to communicate over the network.
+Stop the packet capture and filter the results to show only outbound communication.
+By inspecting the destination IP addresses in the packet capture, you should be able to compile a list of IPs for each application. This list can then be used in the iptables rules.</p>
+<p>Please note that this method might not give a comprehensive list of all IPs used by these apps, but it should give a reasonable subset for a proof-of-concept project.</p>
+<p>Once you've obtained the IP ranges for each of these apps, the next step would be to modify the iptables rules in the redsocks setup script to include these IPs. Afterward, test the setup to ensure the apps' traffic is being correctly routed through the Nym socks5 proxy.</p>
+<h2 id="to-do-73-and-on-traffic-segmentation-wrapper-for-networking"><a class="header" href="#to-do-73-and-on-traffic-segmentation-wrapper-for-networking"><b>&quot;TO-DO&quot;: 7.3 and on, traffic segmentation, wrapper for networking </b></a></h2>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="pitch.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="usecases.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="pitch.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="usecases.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

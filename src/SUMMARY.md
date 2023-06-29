@@ -1,6 +1,8 @@
 # Summary
 
 - [Main info](./pitch.md)
-- [Research on product/competition](./research.md)
-- [Roadmap](./roadmap.md)
 - [Networking](./networking.md)
+- [Use cases](./usecases.md)
+- [Nym Research](./nymresearch.md)
+- [Roadmap](./roadmap.md)
+- [Research on product/competition](./research.md)

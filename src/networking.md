@@ -1,35 +1,8 @@
 # Routing Traffic via Nym
-## <b>"TO-DO": 7.3 and on, traffic segmentation, wrapper for networking </b>
 
-Assignment:
+![Alternative text](../img/1.jpg)
 
-- [project] is: wireless AP that has pi-hole on it and nym-gateway to access nym mixnet over nym-socks5-client. All traffic from AP’s guests (Telegram, Signal, Monero wallet, Metamask wallet and Keplr wallet) should be routed through the nym-socks5-proxy running at localhost:1080 on the WiFi AP. Other traffic would be routed over the regular default gateway on the wifi AP. We are using Raspberry Pi OS.
-
-Before we dive into coding and implementing the project, let's first establish a solid plan. Here's a brief outline of our approach:
-
-## Table of Contents:
-
-Hardware and Software Requirements
-System Setup
-Configuring Raspberry Pi as a Wireless Access Point
-Installing and Configuring Pi-hole
-Setting up Nym Mixnet Gateway
-Configuring Traffic Routing
-Testing and Verification
-Future Enhancements and Roadmap
-Task:
-
-Hardware and Software Requirements: Identify all the necessary hardware components, as well as the Raspberry Pi OS and other software we'll need.
-System Setup: Prepare the Raspberry Pi hardware, install the OS, and set up the development environment.
-Configuring Raspberry Pi as a Wireless Access Point: Use hostapd to convert the Raspberry Pi into a WiFi access point.
-Installing and Configuring Pi-hole: Install Pi-hole on the Raspberry Pi to act as a network-wide ad blocker.
-Setting up Nym Mixnet Gateway: Install and configure the Nym gateway to allow our access point to route specific traffic through the Nym mixnet.
-Configuring Traffic Routing: Setup iptables rules to route specific traffic (Telegram, Signal, Monero wallet, Metamask wallet, Keplr wallet) through the Nym-socks5-proxy and other traffic through the default gateway.
-Testing and Verification: Check that the setup works as expected, all the traffic is routed properly, and the Pi-hole and Nym gateway function correctly.
-Future Enhancements and Roadmap: Discuss potential improvements to the project and outline the roadmap for future development.
-Next, we will begin with the Hardware and Software Requirements.
-we are using 64-bit raspberry pi OS on raspberry pi 4, that means the arch is aarch64-unknown-linux-gnu. We will run the pi headless and without GUI.
-Write step 2. and include the new information in the documentation.
+Our product is a wireless AP that has pi-hole on it and nym-gateway to access nym mixnet over nym-socks5-client. All traffic from AP’s guests (Telegram, Signal, Monero wallet, Metamask wallet and Keplr wallet) should be routed through the nym-socks5-proxy running at localhost:1080 on the WiFi AP. Other traffic would be routed over the regular default gateway on the wifi AP. We are using Raspberry Pi OS.
 
 
 ## System Setup:
@@ -336,3 +309,5 @@ By inspecting the destination IP addresses in the packet capture, you should be 
 Please note that this method might not give a comprehensive list of all IPs used by these apps, but it should give a reasonable subset for a proof-of-concept project.
 
 Once you've obtained the IP ranges for each of these apps, the next step would be to modify the iptables rules in the redsocks setup script to include these IPs. Afterward, test the setup to ensure the apps' traffic is being correctly routed through the Nym socks5 proxy.
+
+## <b>"TO-DO": 7.3 and on, traffic segmentation, wrapper for networking </b>
